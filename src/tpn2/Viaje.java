@@ -1,5 +1,7 @@
 package tpn2;
 
+import java.util.Scanner;
+
 
 public class Viaje {
     private int distancia;
@@ -64,16 +66,24 @@ public class Viaje {
     }
     
     public void calculoDistancia(){
-        
+        Scanner leer = new Scanner(System.in);
+        if (origen.getRuta().equalsIgnoreCase(destino.getRuta())) {
+            distancia = Math.abs(destino.getKmRuta()-origen.getKmRuta());
+        }else{
+            System.out.println("Las ciudades no se encuentran en la misma ruta");
+            System.out.println("Ingrese manualmente la distancia en Km:");
+            distancia = leer.nextInt();
+        }
     }
     
     public double costoPeajes(){
-        
+        return peajes * 115.7;
     }
     public double costoCombustible(){
-            
+            return vehiculo.calcularCostoCombustible(distancia);
         }
     public double costoTotal(){
+         return costoPeajes() + costoCombustible();
         
     }
 }

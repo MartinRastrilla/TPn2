@@ -39,20 +39,5 @@ public abstract class Vehiculo {
         this.combustible = combustible;
     }
     
-    public Double calcularCostoCombustible(int distancia){
-        switch (combustible.getTipoCombustible()) {
-            case "Diesel":
-                
-                break;
-            case "GNC":
-                
-                break;
-            case "Gasoil":
-                
-                break;
-            default:
-                throw new AssertionError();
-        }
-        return 0.;
-    }
+    public abstract Double calcularCostoCombustible(int distancia);
 }
