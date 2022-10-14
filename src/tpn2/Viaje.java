@@ -68,7 +68,11 @@ public class Viaje {
     public void calculoDistancia(){
         Scanner leer = new Scanner(System.in);
         if (origen.getRuta().equalsIgnoreCase(destino.getRuta())) {
+<<<<<<< Updated upstream
             distancia = Math.abs(destino.getKmRuta()-origen.getKmRuta());
+=======
+            distancia = destino.getKmRuta()-origen.getKmRuta();
+>>>>>>> Stashed changes
         }else{
             System.out.println("Las ciudades no se encuentran en la misma ruta");
             System.out.println("Ingrese manualmente la distancia en Km:");
